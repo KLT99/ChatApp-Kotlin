@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="9dp"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true">
+
+        <ImageView
+            android:id="@+id/img_perfil_msg"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_perfil_msg"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/txt_view_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_view_msg"
+            android:layout_alignParentEnd="true"
+            android:textSize="18sp"
+            android:padding="8dp"
+            android:background="@drawable/background_right"
+            android:textColor="@color/white"/>
+
+        <ImageView
+            android:id="@+id/img_send_right"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/txt_msg_visto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/txt_view_msg"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

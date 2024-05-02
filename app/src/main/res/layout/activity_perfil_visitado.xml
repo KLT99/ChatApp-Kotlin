@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".Perfil.PerfilVisitado">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/pv_perfil_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pv_perfil_txt"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"/>
+
+        <!-- Imagen de Perfil del usuario -->
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/pv_ImagenUser"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/imagen_usuario_visitado"/>
+
+        <!-- Nombre de usuario -->
+        <TextView
+            android:id="@+id/pv_nombreU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pv_nombreU"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/pv_emailU"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pv_emailU"
+            android:layout_marginTop="3dp"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/pv_uid_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pv_uid_txt"
+            android:layout_marginTop="3dp"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:id="@+id/pv_uid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/pv_uid"
+            android:layout_marginTop="3dp"
+            android:textStyle="bold"
+            android:textSize="15sp"/>
+        
+        <View
+            android:layout_width="350dp"
+            android:layout_height="2dp"
+            android:background="@color/purple"
+            android:layout_marginTop="10dp"/>
+
+        <!--Nombres-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="@string/pv_nombres_txt"/>
+
+            <TextView
+                android:id="@+id/pv_nombres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="18sp"
+                android:text="@string/doble_guion_medio"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--Apellidos-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="@string/pv_apellidos_txt"/>
+
+            <TextView
+                android:id="@+id/pv_apellidos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="18sp"
+                android:text="@string/doble_guion_medio"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--Profesion-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="@string/pv_profesion_txt"/>
+
+            <TextView
+                android:id="@+id/pv_profesion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="18sp"
+                android:text="@string/doble_guion_medio"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--Telefono-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="@string/pv_telefono_txt"/>
+
+            <TextView
+                android:id="@+id/pv_telefono"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="18sp"
+                android:text="@string/doble_guion_medio"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--Edad-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="@string/pv_edad_txt"/>
+
+            <TextView
+                android:id="@+id/pv_edad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="18sp"
+                android:text="@string/doble_guion_medio"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--Domicilio-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="@string/pv_domicilio_txt"/>
+
+            <TextView
+                android:id="@+id/pv_domicilio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="18sp"
+                android:text="@string/doble_guion_medio"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--Proveedor-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:text="@string/pv_proveedor_txt"/>
+
+            <TextView
+                android:id="@+id/pv_proveedor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textSize="18sp"
+                android:text="@string/doble_guion_medio"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--Realizar llamada y mandar mensaje-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_llamar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_llamar"
+                app:icon="@drawable/ic_call"/>
+
+            <Button
+                android:id="@+id/btn_send_sms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/btn_send_sms"
+                app:icon="@drawable/ic_sms"
+                android:layout_marginStart="10dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</RelativeLayout>

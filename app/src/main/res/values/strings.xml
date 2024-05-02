@@ -1,0 +1,86 @@
+<resources>
+    <string name="app_name">Chat App - Kotlin</string>
+    <string name="nombre_desarrollador">Karina López Torres</string>
+
+    <!--    <string name="btn_ir_registros">Registrarme</string>-->
+    <string name="btn_ir_logeo">Ingresar con Email</string>
+    <string name="btn_login_google">Ingresar con Google</string>
+    <string name="default_web_client_id">1043315412803-qjd9gfrphkbf290rd6pv9u13u5p76d9r.apps.googleusercontent.com</string>
+
+    <string name="user_name">Nombre de Usuario</string>
+    <string name="email">Correo Electronico</string>
+    <string name="password">Contraseña</string>
+    <string name="r_et_r_password">Repita su contraseña</string>
+    <string name="btn_registrar">Registrar</string>
+
+    <string name="menu_salir">Cerrar Sesión</string>
+
+    <string name="btn_login">Ingresar</string>
+
+    <string name="txt_no_cuenta">¿No tienes una cuenta?</string>
+    <string name="txt_ir_registro">Registrarme</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="search_user">Buscar Usuario</string>
+
+    <string name="menu_perfil">Perfil de Usuario</string>
+    <string name="menu_acerca_de">Acerca de</string>
+    <string name="menu_visitar">Visitar Perfil</string>
+
+    <!-- PERFIL DE USUARIO-->
+    <string name="p_nombres">Nombre(s)</string>
+    <string name="p_proveedor_txt">Proveedor: </string>
+    <string name="p_proveedor"> -- </string>
+    <string name="p_apellidos">Apellidos</string>
+    <string name="p_profesion">Profesión</string>
+    <string name="p_domicilio">Domicilio</string>
+    <string name="p_age">Edad</string>
+    <string name="p_telefono">Telefóno</string>
+    <string name="Guardar">Guardar</string>
+
+    <string name="btn_selectImage">Elegir imagen de</string>
+    <string name="btn_updateImage">Actualizar</string>
+
+    <string name="txt_select_img">Seleccionar imagen de: </string>
+    <string name="btn_open_galery">Galería</string>
+    <string name="btn_open_camera">Camará</string>
+
+    <string name="N_usuario_chat">Nombre de Usuario</string>
+    <string name="et_message">Escriba un mensaje</string>
+
+    <string name="txt_view_msg">Hola, ¿Cómo estas?</string>
+
+    <!--CD ESTABLECER TELEFONO-->
+    <string name="establecer_telefono">Escriba su número</string>
+    <string name="Btn_aceptar_telefono">Aceptar</string>
+
+    <!--CD ESTABLECER TELEFONO-->
+    <string name="btn_verificar">No Verificado</string>
+
+    <string name="cuenta_verificada_txt">Cuenta Verificada</string>
+    <string name="btnEntendidoVerificado">Entendido</string>
+
+
+    <string name="pv_perfil_txt">Perfil de usuario</string>
+    <string name="pv_nombreU">Nombre de usuario</string>
+    <string name="pv_emailU">Email de usuario</string>
+    <string name="pv_uid_txt">Identificador: </string>
+    <string name="pv_uid">Uid</string>
+
+
+    <string name="pv_nombres_txt">Nombre(s): </string>
+    <string name="doble_guion_medio"> -- </string>
+    <string name="pv_apellidos_txt">Apellidos: </string>
+    <string name="pv_profesion_txt">Profesión: </string>
+    <string name="pv_telefono_txt">Telefono: </string>
+    <string name="pv_edad_txt">Edad: </string>
+    <string name="pv_domicilio_txt">Domicilio: </string>
+    <string name="pv_proveedor_txt">Proveedor: </string>
+
+
+    <string name="btn_llamar">LLAMAR</string>
+    <string name="btn_send_sms">Enviar SMS</string>
+
+</resources>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1043315412803",
+    "project_id": "chatapp-adbc5",
+    "storage_bucket": "chatapp-adbc5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043315412803:android:069b4ed0ae388da3ece9f6",
+        "android_client_info": {
+          "package_name": "com.uintecs.klt.chatapp_kotlin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAgTuR1C_Lrsrn5CH3gZ1GzWLbIUbhJHuU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
