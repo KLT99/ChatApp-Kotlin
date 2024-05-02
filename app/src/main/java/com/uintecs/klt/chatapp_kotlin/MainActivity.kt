@@ -162,7 +162,7 @@ class MainActivity : AppCompatActivity() {
 
             R.id.menu_acerca_de->{
 
-                Toast.makeText(applicationContext, "Acerca de", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Acerca de ", Toast.LENGTH_SHORT).show()
 
                 return true
             }

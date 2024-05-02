@@ -98,7 +98,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         intent.putExtras(bundle)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
 
-        val pendingIntent = PendingIntent.getActivity(this, j, intent, PendingIntent.FLAG_IMMUTABLE)
+        val pendingIntent = PendingIntent.getActivity(this, j, intent, PendingIntent.FLAG_MUTABLE)
         //val pendingIntent = PendingIntent.getActivity(this, j, intent, PendingIntent.FLAG_MUTABLE)
         val sonido = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val oreoNotification = OreoNotification(this)
