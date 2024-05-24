@@ -82,5 +82,8 @@
 
     <string name="btn_llamar">LLAMAR</string>
     <string name="btn_send_sms">Enviar SMS</string>
+    
+    <!--Cuadro de Dialogo-->
+    <string name="btn_close">Cerrar</string>
 
 </resources>

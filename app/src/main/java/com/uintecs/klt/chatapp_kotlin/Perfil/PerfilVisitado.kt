@@ -13,6 +13,8 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -39,6 +41,8 @@ class PerfilVisitado : AppCompatActivity() {
 
     private lateinit var btn_llamar : Button
     private lateinit var btn_send_sms : Button
+
+    var user : FirebaseUser ?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -95,6 +99,8 @@ class PerfilVisitado : AppCompatActivity() {
 
         btn_llamar      = findViewById(R.id.btn_llamar)
         btn_send_sms    = findViewById(R.id.btn_send_sms)
+
+        user = FirebaseAuth.getInstance().currentUser
 
     }
 
@@ -203,4 +209,25 @@ class PerfilVisitado : AppCompatActivity() {
             }
         }
 
+
+    private fun UpdateState(estado : String){
+        val reference = FirebaseDatabase.getInstance().reference.child("Usuarios")
+            .child(user!!.uid)
+
+        val hasMap = HashMap<String, Any>()
+        hasMap["estado"] = estado
+        reference!!.updateChildren(hasMap)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        UpdateState("onLine")
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        UpdateState("offLine")
+    }
 }

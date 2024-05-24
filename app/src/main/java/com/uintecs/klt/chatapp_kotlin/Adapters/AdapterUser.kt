@@ -29,13 +29,17 @@ class AdapterUser (context : Context, listaUsuarios : List<Usuario>, chatLeido :
     class ViewHolder(itemView : View):RecyclerView.ViewHolder(itemView) {
 
         var user_name : TextView
-        var user_email : TextView
+        //var user_email : TextView
         var user_image : ImageView
+        var img_online : ImageView
+        var img_offLine : ImageView
 
         init {
             user_name = itemView.findViewById(R.id.item_user_name)
-            user_email = itemView.findViewById(R.id.item_user_email)
+            //user_email = itemView.findViewById(R.id.item_user_email)
             user_image = itemView.findViewById(R.id.item_image)
+            img_online = itemView.findViewById(R.id.img_online)
+            img_offLine = itemView.findViewById(R.id.img_offline)
         }
     }
 
@@ -56,7 +60,7 @@ class AdapterUser (context : Context, listaUsuarios : List<Usuario>, chatLeido :
         val usuario : Usuario = listaUsuarios[position]
 
         holder.user_name.text = usuario.getN_Usuario()
-        holder.user_email.text = usuario.getEmail()
+        //holder.user_email.text = usuario.getEmail()
         Glide.with(context).load(usuario.getImagen()).placeholder(R.drawable.ic_item_user).into(holder.user_image)
 
         holder.itemView.setOnClickListener{
@@ -66,6 +70,27 @@ class AdapterUser (context : Context, listaUsuarios : List<Usuario>, chatLeido :
             intent.putExtra("uid_usuario", usuario.getUid())
             //Toast.makeText(context, "El usuario seleccionado es: "+usuario.getN_Usuario(), Toast.LENGTH_SHORT).show()
             context.startActivity(intent)
+        }
+
+        if (chatLeido){
+
+            if (usuario.getEstado() == "onLine"){
+
+                holder.img_online.visibility = View.VISIBLE
+                holder.img_offLine.visibility = View.GONE
+
+            } else {
+
+                holder.img_online.visibility = View.GONE
+                holder.img_offLine.visibility = View.VISIBLE
+
+            }
+
+        } else {
+
+            holder.img_online.visibility = View.GONE
+            holder.img_offLine.visibility = View.GONE
+
         }
 
     }

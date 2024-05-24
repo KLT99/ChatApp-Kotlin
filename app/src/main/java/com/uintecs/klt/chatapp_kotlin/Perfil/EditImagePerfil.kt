@@ -17,6 +17,7 @@ import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import com.uintecs.klt.chatapp_kotlin.R
@@ -32,6 +33,8 @@ class EditImagePerfil : AppCompatActivity() {
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var progressDialog: ProgressDialog
 
+    var firebaseUser : FirebaseUser ?= null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit_image_perfil)
@@ -46,6 +49,7 @@ class EditImagePerfil : AppCompatActivity() {
         progressDialog.setCanceledOnTouchOutside(false)
 
         firebaseAuth = FirebaseAuth.getInstance()
+        firebaseUser = FirebaseAuth.getInstance().currentUser
 
         btnSelectImg.setOnClickListener {
             //Toast.makeText(applicationContext, "Seleccionar imagen", Toast.LENGTH_SHORT).show()
@@ -204,4 +208,24 @@ class EditImagePerfil : AppCompatActivity() {
                 }
         }
 
+    private fun UpdateState(estado : String){
+        val reference = FirebaseDatabase.getInstance().reference.child("Usuarios")
+            .child(firebaseUser!!.uid)
+
+        val hasMap = HashMap<String, Any>()
+        hasMap["estado"] = estado
+        reference!!.updateChildren(hasMap)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        UpdateState("onLine")
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        UpdateState("offLine")
+    }
 }

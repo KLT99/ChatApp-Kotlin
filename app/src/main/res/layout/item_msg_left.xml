@@ -38,6 +38,7 @@
         android:id="@+id/txt_msg_visto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txt_view_msg"/>
+        android:layout_below="@+id/txt_view_msg"
+        android:visibility="gone"/>
 
 </RelativeLayout>

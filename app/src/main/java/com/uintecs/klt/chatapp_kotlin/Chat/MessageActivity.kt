@@ -473,6 +473,7 @@ class MessageActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         reference!!.removeEventListener(seenListener!!)
+        UpdateState("offLine")
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -499,6 +500,22 @@ class MessageActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
 
+    }
+
+
+    private fun UpdateState(estado : String){
+        val reference = FirebaseDatabase.getInstance().reference.child("Usuarios")
+            .child(firebaseUser!!.uid)
+
+        val hasMap = HashMap<String, Any>()
+        hasMap["estado"] = estado
+        reference!!.updateChildren(hasMap)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        UpdateState("onLine")
     }
 
 }
