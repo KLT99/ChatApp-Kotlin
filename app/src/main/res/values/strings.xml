@@ -68,6 +68,7 @@
     <string name="pv_emailU">Email de usuario</string>
     <string name="pv_uid_txt">Identificador: </string>
     <string name="pv_uid">Uid</string>
+    <string name="txt_ultimo_msg"/>
 
 
     <string name="pv_nombres_txt">Nombre(s): </string>
@@ -85,5 +86,10 @@
     
     <!--Cuadro de Dialogo-->
     <string name="btn_close">Cerrar</string>
+
+    <string name="desarrollador">Desarrollado por: Karina López Torres</string>
+    <string name="correoSoporte">Soporte: kari9480@gmail.com</string>
+    <string name="version">Versión: 1.0</string>
+    <string name="entendidoInfo">Entendido</string>
 
 </resources>

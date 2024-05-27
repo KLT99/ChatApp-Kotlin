@@ -1,11 +1,15 @@
 package com.uintecs.klt.chatapp_kotlin
 
+import android.app.Dialog
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
@@ -162,8 +166,7 @@ class MainActivity : AppCompatActivity() {
 
             R.id.menu_acerca_de->{
 
-                Toast.makeText(applicationContext, "Acerca de ", Toast.LENGTH_SHORT).show()
-
+                InfoApp()
                 return true
             }
 
@@ -177,6 +180,53 @@ class MainActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    private fun InfoApp(){
+
+        val EntendidoInfo : Button
+        val ir_FB : ImageView
+        val ir_instagram : ImageView
+        val ir_youtube : ImageView
+        val ir_twitter : ImageView
+
+        val dialog = Dialog(this@MainActivity)
+
+        dialog.setContentView(R.layout.cuadro_info_app)
+        EntendidoInfo = dialog.findViewById(R.id.entendidoInfo)
+        ir_FB = dialog.findViewById(R.id.Ir_FB)
+        ir_instagram = dialog.findViewById(R.id.Ir_Instagram)
+        ir_youtube = dialog.findViewById(R.id.Ir_youtube)
+        ir_twitter = dialog.findViewById(R.id.Ir_twitter)
+
+        ir_FB.setOnClickListener {
+            redSocial("https://www.facebook.com")
+        }
+
+        ir_instagram.setOnClickListener {
+            redSocial("https://www.instagram.com")
+        }
+
+        ir_youtube.setOnClickListener {
+            redSocial("https://www.youtube.com")
+        }
+
+        ir_twitter.setOnClickListener {
+            redSocial("https://www.twitter.com")
+        }
+
+        EntendidoInfo.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
+        dialog.setCanceledOnTouchOutside(false)
+
+    }
+
+    private fun redSocial(redSocial : String){
+        val FB = Intent(Intent.ACTION_VIEW, Uri.parse(redSocial))
+        startActivity(FB)
     }
 
     private fun UpdateState(estado : String){

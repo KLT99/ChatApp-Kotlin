@@ -10,7 +10,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.getValue
 import com.uintecs.klt.chatapp_kotlin.Chat.MessageActivity
+import com.uintecs.klt.chatapp_kotlin.Model.Chat
 import com.uintecs.klt.chatapp_kotlin.Model.Usuario
 import com.uintecs.klt.chatapp_kotlin.R
 
@@ -19,6 +26,7 @@ class AdapterUser (context : Context, listaUsuarios : List<Usuario>, chatLeido :
     private val context : Context
     private val listaUsuarios : List<Usuario>
     private var chatLeido : Boolean
+    var ultimoMsg : String = ""
 
     init {
         this.context = context
@@ -33,6 +41,7 @@ class AdapterUser (context : Context, listaUsuarios : List<Usuario>, chatLeido :
         var user_image : ImageView
         var img_online : ImageView
         var img_offLine : ImageView
+        var txt_ultimo_msg : TextView
 
         init {
             user_name = itemView.findViewById(R.id.item_user_name)
@@ -40,6 +49,7 @@ class AdapterUser (context : Context, listaUsuarios : List<Usuario>, chatLeido :
             user_image = itemView.findViewById(R.id.item_image)
             img_online = itemView.findViewById(R.id.img_online)
             img_offLine = itemView.findViewById(R.id.img_offline)
+            txt_ultimo_msg = itemView.findViewById(R.id.txt_ultimo_msg)
         }
     }
 
@@ -73,6 +83,12 @@ class AdapterUser (context : Context, listaUsuarios : List<Usuario>, chatLeido :
         }
 
         if (chatLeido){
+            obtenerUltimoMsj(usuario.getUid(),holder.txt_ultimo_msg)
+        } else {
+            holder.txt_ultimo_msg.visibility = View.GONE
+        }
+
+        if (chatLeido){
 
             if (usuario.getEstado() == "onLine"){
 
@@ -92,6 +108,51 @@ class AdapterUser (context : Context, listaUsuarios : List<Usuario>, chatLeido :
             holder.img_offLine.visibility = View.GONE
 
         }
+
+    }
+
+    private fun obtenerUltimoMsj(ChatUsuarioUid: String?, txtUltimoMsg: TextView) {
+
+        ultimoMsg = "defaultMensaje"
+
+        val firebaseUser = FirebaseAuth.getInstance().currentUser
+        val reference = FirebaseDatabase.getInstance().reference.child("Chats")
+
+        reference.addValueEventListener(object : ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+
+                for (dataSnapshot in snapshot.children){
+                    val chat : Chat?= dataSnapshot.getValue(Chat::class.java)
+
+                    if (firebaseUser != null && chat != null){
+
+                        if(chat.getReceptor() == firebaseUser!!.uid &&
+                            chat.getEmisor() == ChatUsuarioUid ||
+                            chat.getReceptor() == ChatUsuarioUid &&
+                            chat.getEmisor() == firebaseUser!!.uid){
+
+                            ultimoMsg = chat.getMensaje()!!
+
+                        }
+
+                    }
+                }
+
+                when(ultimoMsg){
+
+                    "defaultMensaje" -> txtUltimoMsg.text = "No hay mensajes"
+                    "Se ha enviado la imagen" -> txtUltimoMsg.text = "Imagen enviada"
+
+                    else-> txtUltimoMsg.text = ultimoMsg
+                }
+                ultimoMsg = "defaultMensaje"
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+
+        })
 
     }
 

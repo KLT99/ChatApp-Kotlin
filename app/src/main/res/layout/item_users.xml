@@ -73,6 +73,14 @@
                 android:layout_marginStart="10dp"
                 android:text="@string/email"/>-->
 
+            <TextView
+                android:id="@+id/txt_ultimo_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"/>
+
         </LinearLayout>
         
     </LinearLayout>
