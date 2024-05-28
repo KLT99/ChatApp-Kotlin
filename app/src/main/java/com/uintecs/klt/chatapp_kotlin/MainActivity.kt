@@ -225,8 +225,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun redSocial(redSocial : String){
-        val FB = Intent(Intent.ACTION_VIEW, Uri.parse(redSocial))
-        startActivity(FB)
+        val RS = Intent(Intent.ACTION_VIEW, Uri.parse(redSocial))
+        startActivity(RS)
     }
 
     private fun UpdateState(estado : String){
